@@ -4,18 +4,16 @@ Output: An Int. """
 
 
 def end_zeros(num: int) -> int:
-    count = 0
-    for symbol in str(num)[::-1]:
-        if symbol == '0':
-            count += 1
-        else:
-            break
-    return count
+    for i, digit in enumerate(str(num)[::-1]):
+        if digit != '0':
+            return i
+    else:
+        return len(str(num))
 
 
 print(end_zeros(0)) #== 1
 print(end_zeros(1)) #== 0
 print(end_zeros(10)) #== 1
 print(end_zeros(101)) #== 0
-print(end_zeros(245)) #== 0
+print(end_zeros(2450)) #== 0
 print(end_zeros(100100)) #== 2
