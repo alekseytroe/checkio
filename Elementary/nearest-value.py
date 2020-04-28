@@ -15,8 +15,9 @@ Output: Int.
 
 
 def nearest_value(values: set, one: int) -> int:
-    # print([(abs(one - value), value) for value in values])
-    return min(((abs(one - value), value) for value in values))[1]
+    print([(abs(one - value), value) for value in values])
+    # return min(((abs(one - value), value) for value in values))[1]
+    return min(values, key=lambda value: (abs(value - one), value))
 
 
 print(nearest_value({4, 7, 10, 11, 12, 17}, 9))  # 10
@@ -28,3 +29,7 @@ print(nearest_value({4, 7, 10, 11, 12, 17}, 100))  # 17
 print(nearest_value({5, 10, 8, 12, 89, 100}, 7))  # 8
 print(nearest_value({5, 10, 8, 12, 89, 100}, 100))  # 100
 print(nearest_value({-1, 2, 3}, 0))  # -1
+print(nearest_value({0, -2}, -1))
+""" 
+"""
+
