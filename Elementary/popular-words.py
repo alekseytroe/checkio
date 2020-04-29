@@ -13,10 +13,6 @@
 
 
 def popular_words(text: str, words: list) -> dict:
-    # count_words = {}
-    # for word in words:
-    #     count_words.update({word: text.lower().split().count(word)})
-    # count_words.update({word: text.lower().split().count(word) for word in words})
     return {word: text.lower().split().count(word) for word in words}
 
 
